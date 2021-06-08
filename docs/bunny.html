@@ -13,6 +13,26 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
 
+    <script>
+      window.addEventListener("load", function() {
+          var elements = document.getElementsByClassName("rainbowText");
+          for (let i = 0; i < elements.length; i++) {
+            generateRainbowText(elements[i]);
+          }
+        });
+
+        function generateRainbowText(element) {
+          var text = element.innerText;
+          element.innerHTML = "";
+          for (let i = 0; i < text.length; i++) {
+            let charElem = document.createElement("span");
+            charElem.style.color = "hsl(" + (360 * i / text.length) + ",80%,50%)";
+            charElem.innerHTML = text[i];
+            element.appendChild(charElem);
+          }
+        }
+    </script>
+
     <style>
       figure {
         margin-bottom: 10rem;
@@ -61,14 +81,15 @@
           </div>
           <div id="text03" style="font-size: 20px;">
 
-            <p>Bunny is cute</p>
-            <p>Bunny is nice</p>
-            <p>Bunny is powerful</p>
-            <p>Bunny is playful</p>
-            <p>Bunny is happy</p>
-            <p><br/></p>
-            <p>Bunny has heroism</p>
+            <p class="rainbowText">Bunny is cute</p>
+            <p class="rainbowText">Bunny is nice</p>
+            <p class="rainbowText">Bunny is powerful</p>
+            <p class="rainbowText">Bunny is playful</p>
+            <p class="rainbowText">Bunny is happy</p>
+            <p class="rainbowText"><br/></p>
+            <p class="rainbowText">Bunny has heroism</p>
             
+            <img src="./images/bunny.png" />
 
             
 
